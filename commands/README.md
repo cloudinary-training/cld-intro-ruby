@@ -1,6 +1,6 @@
 # Basic Commands #
 
-<p style="color:red">WIP: This is source code for a course under development.</p>
+<h2 style="color:red">WIP: This is source code for a course under development.</h2>
 
 ## Setting up
 
