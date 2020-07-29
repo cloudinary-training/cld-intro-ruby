@@ -1,5 +1,7 @@
 # Cloudinary Intro using Ruby #
 
+<p style="color:red">WIP: This is source code for a course under development.</p>
+
 Scripts using the Upload and Admin APIs can be found in the `/commands` directory. The `/server` directory contains code to run a Rails server to exercise creating transformations.
 
 
