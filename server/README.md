@@ -1,5 +1,7 @@
 # Cloudinary Ruby and Rails Server #
 
+<p style="color:red">WIP: This is source code for a course under development.</p>
+
 ### Setting up
 
 ## Basic sample for Rails
