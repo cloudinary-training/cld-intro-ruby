@@ -38,3 +38,9 @@ Simple application for uploading images and displaying them in a list. Implement
 * [CarrierWave integration documentation](http://cloudinary.com/documentation/rails_integration#carrierwave)
 * [RailsCasts episode on CarrierWave](http://railscasts.com/episodes/253-carrierwave-file-uploads)
 * [Installing rbenv on zsh on macOS](https://programmingzen.com/installing-rbenv-on-zsh-on-macos/)
+
+
+## Credits
+Sample Video by https://file-examples.com/
+Faces Image by Photo by August de Richelieu from Pexels
+
