@@ -1,12 +1,253 @@
 <h1>
-  Uploads and Transformations
+  Transformations
 </h1>
 
+<h2>Optimization</h2>
+
+<h3>Crop Dog</h3>
+<!-- cropping takes a chunk out of an image -->
 <%= render 'image_box',
   :public_id => 'dog',
-  :url => @uploads[:dog],
-  :description => 'Fill 200x200',
-  :options => { :width => 200, :height => 200, :crop => "fill" }
+  :format => 'jpg',
+  :description => 'dog Width 300, Height 200,Crop crop',
+  :options => { :width => 300, :height => 200, :crop => "crop" }
 %>
+<h3>Thumb Dog with Gravity</h3>
+<!-- use gravity with thumb to get focus on someting interesting or a compass point -->
+<%= render 'image_box',
+  :public_id => 'dog',
+  :format => 'jpg',
+  :description => 'dog Width 300, Height 200,Crop thumb, Gravity auto',
+  :options => { :width => 300, :height => 200, :crop => "thumb", :gravity => "auto" }
+%>
+
+<h3>Thumb Face with Gravity</h3>
+<%= render 'image_box',
+  :public_id => 'face',
+  :format => 'jpeg',
+  :description => 'face Width 300, Height 200,Crop thumb, Gravity face',
+  :options => { :width => 300, :height => 200, :crop => "thumb", :gravity => "face" }
+%>
+<h3>Thumb Faces with Gravity</h3>
+<%= render 'image_box',
+  :public_id => 'faces',
+  :format => 'jpeg',
+  :description => 'faces Width 300, Height 200,Crop thumb, Gravity faces',
+  :options => { :width => 300, :height => 200, :crop => "thumb", :gravity => "faces" }
+%>
+
+<h3>Thumb Logo with Fill</h3>
+<!-- you don't have to use gravity if not needed - fill gives exact dimensions-->
+<%= render 'image_box',
+  :public_id => 'logo',
+  :format => 'png',
+  :description => 'logo Width 100, Height 100,Crop fill',
+  :options => { :width => 100, :height => 100, :crop => "fill" }
+%>
+
+<h2>Format</h2>
+<!--let Cloudinary determine the best format base on browser -->
+<%= render 'image_box',
+  :public_id => 'dog',
+  :format => '',
+  :description => 'dog Height 300, Crop scale,  Format auto ',
+  :options => { :height => 300, :crop => "scale", :format => "auto" }
+%>
+
+<h2>Quality (Compression)</h2>
+
+<!--let Cloudinary determine quality ~80 or you can supply a number from 1-100 -->
+<%= render 'image_box',
+  :public_id => 'faces',
+  :format => '',
+  :description => 'faces Height 300, Crop scale,  Format auto, Quality auto ',
+  :options => { :height => 300, :crop => "scale", :format => "auto" , :quality => "auto"}
+%>
+
+<h2>Aesthetics</h2>
+
+<h3>Radius (rounded corners)</h3>
+<%= render 'image_box',
+  :public_id => 'face',
+  :format => '',
+  :description => 'face Height 300, Width 300, Crop thumb,  Format auto, Quality auto , radius max',
+  :options => { :width => 300, :height => 300, :crop => "thumb", 
+  :gravity => "auto", :format => "auto" , :quality => "auto",
+  :radius => "max"}
+%>
+
+<h3>Borders</h3>
+
+<%= render 'image_box',
+  :public_id => 'face',
+  :format => '',
+  :description => 'face Height 300, Width 300, Crop thumb,  Format auto, Quality auto , radius max, border',
+  :options => { :width => 300, :height => 300, :crop => "thumb", 
+  :gravity => "auto", :format => "auto" , :quality => "auto",
+  :radius => "max",
+  :border=>"10px_solid_rgb:bde4fb"}
+%>
+
+<h3>Background Color</h3>
+
+<!--  use a crop pad to leave some space to show background -->
+<%= render 'image_box',
+  :public_id => 'face',
+  :format => '',
+  :description => 'face Height 300, Width 200, Crop pad,  Format auto, Quality auto, border',
+  :options => { :width => 300, :height => 200, :crop => "pad", 
+  :format => "auto" , :quality => "auto",
+  :background=>"red"}
+%>
+
+<!-- look at predominant, also try predominant_contrast, border, border_contrast -->
+<%= render 'image_box',
+  :public_id => 'face',
+  :format => '',
+  :description => 'face Height 300, Width 200, Crop pad,  Format auto, Quality auto, border auto',
+  :options => { :width => 300, :height => 200, :crop => "pad", 
+  :format => "auto" , :quality => "auto",
+  :background=>"auto:predominant"}
+%>
+
+
+<h3>Effects and Filters</h3>
+
+<h4>Outline Effect</h4>
+<%= render 'image_box',
+  :public_id => 'dog',
+  :format => '',
+  :description => 'dog Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect outline orange',
+  :options => { :width => 300, :height => 300, :crop => "thumb",
+  :gravity => "face", :format => "auto" , :quality => "auto",
+  :effect=>"outline:15:200", :color=>"orange"}
+%>
+
+<h4>Improve Effect</h4>
+<%= render 'image_box',
+  :public_id => 'dog',
+  :format => '',
+  :description => 'dog Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect improve',
+  :options => { :width => 300, :height => 300, :crop => "thumb",
+  :gravity => "face", :format => "auto" , :quality => "auto",
+  :effect=>"improve"}
+%>
+
+<!-- try other art effects like  daguerre, quartz, linen, incognito-->
+<h4>Art Filters</h4>
+<%= render 'image_box',
+  :public_id => 'dog',
+  :format => '',
+  :description => 'dog Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect art',
+  :options => { :width => 300, :height => 300, :crop => "thumb",
+  :gravity => "face", :format => "auto" , :quality => "auto",
+  :effect=>"art:zorro"}
+%>
+<h4>Cartoonify Filters</h4>
+<%= render 'image_box',
+  :public_id => 'face',
+  :format => '',
+  :description => 'faces Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect cartoonify',
+  :options => { :width => 300, :height => 300, :crop => "thumb",
+  :gravity => "face", :format => "auto" , :quality => "auto",
+  :effect=>"cartoonify"}
+%>
+<h4>Color tint</h4>
+<%= render 'image_box',
+  :public_id => 'face',
+  :format => '',
+  :description => 'faces Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect tint ',
+  :options => { :width => 300, :height => 300, :crop => "thumb",
+  :gravity => "face", :format => "auto" , :quality => "auto",
+  :effect=>"tint:50:blue"}
+%>
+
+<h3>Overlay</h3>
+
+<!-- overlays are chained transformations so you need an array -->
+<h4>Image over Image</h4>
+<%= render 'image_box',
+  :public_id => 'face',
+  :format => '',
+  :description => 'faces Height 300, Width 300, Crop thumb,  logo overlay ',
+  :options => { :transformation=>[
+    {:width => 300, :height => 300, :crop => "thumb",:gravity=>"auto"},
+    {:overlay=>"logo", :width=>100, :height=>100, :crop=>"thumb",gravity:"south_east"}
+  ]
+  }
+%>
+
+<h4>Text over Image</h4>
+<%= render 'image_box',
+  :public_id => 'faces',
+  :format => '',
+  :description => 'facess Height 300, Width 300, Crop thumb,  text overlay ',
+  :options => { :transformation=>[
+    {:width => 300, :height => 300, :crop => "thumb"},
+    {:overlay=>{:font_family=>"Arial", :font_size=>30, :text=>"Tutoring"}, 
+    :background=>"white", :color=>"red", :gravity=>"north_west", :y=>10, :x=>10}
+  ]
+  }
+%>
+
+<h4>Image over Video</h4>
+<%= render 'video_box',
+  :public_id => 'video',
+  :description => 'faces Height 300, Width 300, Crop thumb, logo overlay ',
+  :options => { :transformation=>[
+    {:width => 300, :height => 300, :crop => "thumb",:gravity=>"auto"},
+    {:overlay=>"logo", :width=>100, :height=>100, :crop=>"thumb",gravity:"south_east"}
+  ]
+  }
+%>
+
+<%= render 'video_box',
+  :public_id => 'video',
+  :description => 'faces Height 300, Width 300, Crop thumb, text overlay ',
+   :options => { :transformation=>[
+    {:width => 300, :height => 300, :crop => "thumb"},
+    {:overlay=>{:font_family=>"Arial", :font_size=>30, :text=>"Earth"}, 
+    :background=>"white", :color=>"blue", :gravity=>"north_west", :y=>10, :x=>10}
+   ]
+   }
+%>
+
+<h4>Text over Video</h4>
+
+
+
+
+
+
+<!-- scaling takes place in the demo_controller -->
+<h2>Original Assets</h2>
+<h3>Scaled to 300px</h3>
+
+<p>dog</p>
+<%= image_tag(@uploads[:dog]) %>
+<div class="link">
+  <%= link_to(@uploads[:dog], @uploads[:dog], :target => '_blank') %>
+</div>
+<p>face</p>
+<%= image_tag(@uploads[:face]) %>
+<div class="link">
+  <%= link_to(@uploads[:face], @uploads[:face], :target => '_blank') %>
+</div>
+<p>faces</p>
+<%= image_tag(@uploads[:faces]) %>
+<div class="link">
+  <%= link_to(@uploads[:faces], @uploads[:faces], :target => '_blank') %>
+</div>
+<p>logo</p>
+<%= image_tag(@uploads[:logo]) %>
+<div class="link">
+  <%= link_to(@uploads[:logo], @uploads[:logo], :target => '_blank') %>
+</div>
+<p>video</p>
+<%= cl_video_tag(@uploads[:video], :controls => true) %>
+<div class="link">
+  <%= link_to(@uploads[:video], @uploads[:video], :target => '_blank') %>
+</div>
+
 
 

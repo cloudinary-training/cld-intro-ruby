@@ -43,4 +43,5 @@ Simple application for uploading images and displaying them in a list. Implement
 ## Credits
 Sample Video by https://file-examples.com/
 Faces Image by Photo by August de Richelieu from Pexels
+Face Photo by mentatdgt from Pexels
 

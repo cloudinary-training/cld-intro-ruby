@@ -16,9 +16,35 @@
     <%= description %>
   </div>
 
+  <div class="public_id">
+  Image Public ID:
+  <%= public_id %>
+</div>
+
   
 <!--<%= render 'image_box',
   :upload => @uploads[:pizza2],
   :description => 'Fit into 200x150',
   :options => { :width => 200, :height => 150, :crop => "fit" }
 %> -->
+
+<%= render 'image_box',
+  :public_id => 'dog',
+  :format => 'jpg',
+  :description => 'dog Width 200',
+  :options => { :width => 200, :height => 200, :crop => "fill" }
+%>
+
+<%= render 'image_box',
+  :public_id => 'faces',
+   :format => 'jpg',
+  :description => 'Fill 200x200',
+  :options => { :width => 200, :height => 200, :crop => "fill" }
+%>
+
+<%= render 'image_box',
+  :public_id => 'logo',
+   :format => 'png',
+  :description => 'Fill 200x200',
+  :options => { :width => 200, :height => 200, :crop => "fill" }
+%>
