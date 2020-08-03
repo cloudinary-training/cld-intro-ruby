@@ -11,7 +11,7 @@
 
 ---
 
-**Note**: Commands are wrapped in `JSON.pretty_generate()` to make the results easier to read.  They are output for inspection with `puts`.
+**Note**: Commands are wrapped in `JSON.pretty_generate()` abbreviated as `jj`  to make the results easier to read.  They are output for inspection with `puts`.
 
 
 

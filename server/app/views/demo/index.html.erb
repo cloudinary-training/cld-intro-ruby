@@ -2,7 +2,6 @@
   Transformations
 </h1>
 
-<% if false %>
 
 <!-- scaling takes place in the demo_controller -->
 <h2>Original Assets</h2>
@@ -33,7 +32,6 @@
 <div class="link">
   <%= link_to(@uploads[:video], @uploads[:video], target: '_blank') %>
 </div>
-<% end %>
 
 
 <h2>Optimization</h2>
@@ -215,7 +213,7 @@
 <%= render 'image_box',
   public_id: 'faces',
   format: '',
-  description: 'facess Height 300, Width 300, Crop thumb,  text overlay ',
+  description: 'faces Height 300, Width 300, Crop thumb,  text overlay ',
   options: { transformation: [
     {width: 300, height: 300, crop: "thumb"},
     {overlay: {font_family: "Arial", font_size: 30, text: "Tutoring"}, 
@@ -228,10 +226,10 @@
 <h4>Image over Video</h4>
 <%= render 'video_box',
   public_id: 'video',
-  description: 'faces Height 300, Width 300, Crop lpad, logo overlay ',
+  description: 'faces Width 300, Crop scale, logo overlay ',
   options: { transformation: [
-    {width: 300, height: 300, crop: "lpad"},
-    {overlay: "logo", width: 100, height: 100, crop: "thumb",gravity:"south_east"}
+    {width: 300, crop: "scale"},
+    {overlay: "logo", width: 50, height: 50, crop: "thumb",gravity:"south_east"}
   ]
   }
 %>
@@ -239,19 +237,57 @@
 <h4>Text over Video</h4>
 <%= render 'video_box',
   public_id: 'video',
-  description: 'faces Height 300, Width 300, Crop lpad, text overlay ',
+  description: 'faces Width 300, Crop scale, text overlay ',
    options: { transformation: [
-    {width: 300, height: 300, crop: "lpad"},
+    {width: 300, crop: "scale"},
     {overlay: {font_family: "Arial", font_size:30, text:"Earth"}, 
     background:"white", color:"blue", gravity:"north_west", y:10, x:10}
    ]
    }
 %>
 
+<h2> Fetch </h2>
+<p>Need to unrestrict in security settings</p>
+<%= render 'image_box',
+  public_id: 'https://cdn.pixabay.com/photo/2015/03/26/09/39/cupcakes-690040__480.jpg',
+  description: 'Fetch image from remote ',
+  format: '',
+  options: {type: 'fetch'}
+%>
 
 
+<h2>Auto Upload</h2>
+<p>Need to map a folder named 'remote-media` to a cloudinary training server 
+path `https://cloudinary-training.github.io/cld-advanced-concepts/assets/` in the DAM.
+<br>
+You can access the following assets:
+  <ul>
+    <li><a href="https://cloudinary-training.github.io/cld-advanced-concepts/assets/images/dolphin.jpg" target="_blank">images/dolphin.jpg</a></li>
+    <li>video/snowboarding.mp4</li>
+    <li>raw/data.json</li>
+  </ul>
+</p>
 
+<!-- image example -->
+<%= render 'image_box',
+  public_id: 'remote-media/images/dolphin.jpg',
+  description: 'Auto-upload image from remote',
+  format: '',
+  options: {width: 300, height: 300, crop: "lpad"}
+%>
 
+<!-- video example -->
+<%= render 'video_box',
+  public_id: 'remote-media/video/snowboarding.mp4',
+  description: 'Auto-upload image from remote',
+  options: {width: 300, crop: "scale"}
+%>
 
+<!-- raw example -->
 
+ <%= link_to(
+    cloudinary_url('remote-media/raw/data.json',{:type => 'upload', :resource_type => 'raw'}), 
+    cloudinary_url('remote-media/raw/data.json',{:type => 'upload', :resource_type => 'raw'}), 
+    :target => '_blank') 
+%>
 

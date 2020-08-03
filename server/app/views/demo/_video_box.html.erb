@@ -4,7 +4,8 @@
  <%= description %>
 </div>
 
-<%= cl_video_tag(public_id, options) %>
+<% options_with_controls = options.merge(:controls => true) %>
+<%= cl_video_tag(public_id, options_with_controls) %>
 <div class="link">
   <% link_url = cloudinary_url(public_id, options) %>
   <%= link_to(link_url, link_url, :target => '_blank') %>
