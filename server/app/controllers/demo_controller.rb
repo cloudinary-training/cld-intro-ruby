@@ -15,6 +15,18 @@ class DemoController < ApplicationController
     # We can now display the uploaded images and apply transformations on them.
     render
   end
+  def fetch
+    render
+  end
+  def autoupload
+    render
+  end
+  def optimization
+    render
+  end
+  def aesthetics
+    render
+  end
 
   private
 

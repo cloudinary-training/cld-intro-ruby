@@ -1,41 +1,152 @@
 <h1>
-  Transformations
+  Aesthetic Transformations
 </h1>
 
+<h3>Radius (rounded corners)</h3>
 <%= render 'image_box',
-  :upload => @uploads[:pizza],
-  :description => 'Fill 200x150',
-  :options => { :width => 200, :height => 150, :crop => "fill" }
+  public_id: 'face',
+  format: '',
+  description: 'face Height 300, Width 300, Crop thumb,  Format auto, Quality auto , radius max',
+  options: { width: 300, height: 300, crop: "thumb", 
+  gravity: "auto", format: "auto" , quality: "auto",
+  radius: "max"}
 %>
 
-<%= render 'image_box',
-  :upload => @uploads[:pizza2],
-  :description => 'Fit into 200x150',
-  :options => { :width => 200, :height => 150, :crop => "fit" }
-%>
-
-<%= render 'image_box',
-  :upload => @uploads[:lake],
-  :description => 'Eager transformation of scaling to 200x150',
-  :options => @eager_options
-%>
+<h3>Borders</h3>
 
 <%= render 'image_box',
-  :upload => @uploads[:couple],
-  :description => 'Face detection based 200x150 thumbnail',
-  :options => { :width => 200, :height => 150, :crop => "thumb", :gravity => "faces" }
+  public_id: 'face',
+  format: '',
+  description: 'face Height 300, Width 300, Crop thumb,  Format auto, Quality auto , radius max, border',
+  options: { width: 300, height: 300, crop: "thumb", 
+  gravity: "auto", format: "auto" , quality: "auto",
+  radius: "max",
+  border: "10px_solid_rgb:bde4fb"}
 %>
 
+<h3>Background Color</h3>
+
+<!--  use a crop pad to leave some space to show background -->
 <%= render 'image_box',
-  :upload => @uploads[:couple2],
-  :description => 'Fill 200x150, round corners, apply the sepia effect',
-  :options => { :width => 200, :height => 150, :crop => "fill", :gravity => "face", :radius => 10, :effect => "sepia" }
+  public_id: 'face',
+  format: '',
+  description: 'face Height 300, Width 200, Crop pad,  Format auto, Quality auto, border',
+  options: { width: 300, height: 200, crop: "pad", 
+  format: "auto" , quality: "auto",
+  background: "red"}
 %>
 
-<br>
-<%= cl_video_thumbnail_tag "dog", :cloud_name => 'demo',
-   :width => 200, :height => 150, :crop => "fill", :gravity => "face", :radius => 10, :effect => "sepia"
+<!-- look at predominant, also try predominant_contrast, border, border_contrast -->
+<%= render 'image_box',
+  public_id: 'face',
+  format: '',
+  description: 'face Height 300, Width 200, Crop pad,  Format auto, Quality auto, border auto',
+  options: { width: 300, height: 200, crop: "pad", 
+  format: "auto" , quality: "auto",
+  background: "auto:predominant"}
 %>
-<br>
 
-<%= cl_video_tag "dog", :cloud_name => "demo" %>
+
+<h3>Effects and Filters</h3>
+
+<h4>Outline Effect</h4>
+<%= render 'image_box',
+  public_id: 'dog',
+  format: '',
+  description: 'dog Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect outline orange',
+  options: { width: 300, height: 300, crop: "thumb",
+  gravity: "face", format: "auto" , quality: "auto",
+  effect: "outline:15:200", color: "orange"}
+%>
+
+<h4>Improve Effect</h4>
+<%= render 'image_box',
+  public_id: 'dog',
+  format: '',
+  description: 'dog Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect improve',
+  options: { width: 300, height: 300, crop: "thumb",
+  gravity: "face", format: "auto" , quality: "auto",
+  effect: "improve"}
+%>
+
+<!-- try other art effects like  daguerre, quartz, linen, incognito-->
+<h4>Art Filters</h4>
+<%= render 'image_box',
+  public_id: 'dog',
+  format: '',
+  description: 'dog Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect art',
+  options: { width: 300, height: 300, crop: "thumb",
+  gravity: "face", format: "auto" , quality: "auto",
+  effect: "art:zorro"}
+%>
+<h4>Cartoonify Filters</h4>
+<%= render 'image_box',
+  public_id: 'face',
+  format: '',
+  description: 'faces Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect cartoonify',
+  options: { width: 300, height: 300, crop: "thumb",
+  gravity: "face", format: "auto" , quality: "auto",
+  effect: "cartoonify"}
+%>
+<h4>Color tint</h4>
+<%= render 'image_box',
+  public_id: 'face',
+  format: '',
+  description: 'faces Height 300, Width 300, Crop thumb, Format auto, Quality auto, effect tint ',
+  options: { width: 300, height: 300, crop: "thumb",
+  gravity: "face", format: "auto" , quality: "auto",
+  effect: "tint:50:blue"}
+%>
+
+<h3>Overlay</h3>
+
+<!-- overlays are chained transformations so you need an array -->
+<h4>Image over Image</h4>
+<%= render 'image_box',
+  public_id: 'face',
+  format: '',
+  description: 'faces Height 300, Width 300, Crop thumb,  logo overlay ',
+  options: { :transformation=>[
+    {width: 300, height: 300, crop: "thumb",gravity: "auto"},
+    {overlay: "logo", width: 100, height: 100, crop: "thumb",gravity:"south_east"}
+  ]
+  }
+%>
+
+<h4>Text over Image</h4>
+<%= render 'image_box',
+  public_id: 'faces',
+  format: '',
+  description: 'faces Height 300, Width 300, Crop thumb,  text overlay ',
+  options: { transformation: [
+    {width: 300, height: 300, crop: "thumb"},
+    {overlay: {font_family: "Arial", font_size: 30, text: "Tutoring"}, 
+    background: "white", color: "red", gravity: "north_west", y:10, x:10}
+  ]
+  }
+%>
+
+<!-- thumb doesn't work for video -->
+<h4>Image over Video</h4>
+<%= render 'video_box',
+  public_id: 'video',
+  description: 'faces Width 300, Crop scale, logo overlay ',
+  options: { transformation: [
+    {width: 300, crop: "scale"},
+    {overlay: "logo", width: 50, height: 50, crop: "thumb",gravity:"south_east"}
+  ]
+  }
+%>
+
+<h4>Text over Video</h4>
+<%= render 'video_box',
+  public_id: 'video',
+  description: 'faces Width 300, Crop scale, text overlay ',
+   options: { transformation: [
+    {width: 300, crop: "scale"},
+    {overlay: {font_family: "Arial", font_size:30, text:"Earth"}, 
+    background:"white", color:"blue", gravity:"north_west", y:10, x:10}
+   ]
+   }
+%>
+

@@ -1,0 +1,61 @@
+<h1>Optimization</h1>
+
+<h3>Crop Dog</h3>
+<!-- cropping takes a chunk out of an image -->
+<%= render 'image_box',
+  public_id: 'dog',
+  format: 'jpg',
+  description: 'dog Width 300, Height 200,Crop crop',
+  options: { width: 300, height: 200, crop: "crop" }
+%>
+<h3>Thumb Dog with Gravity</h3>
+<!-- use gravity with thumb to get focus on someting interesting or a compass point -->
+<%= render 'image_box',
+  public_id: 'dog',
+  format: 'jpg',
+  description: 'dog Width 300, Height 200,Crop thumb, Gravity auto',
+  options: { width: 300, height: 200, crop: "thumb", gravity: "auto" }
+%>
+
+<h3>Thumb Face with Gravity</h3>
+<%= render 'image_box',
+  public_id: 'face',
+  format: 'jpeg',
+  description: 'face Width 300, Height 200,Crop thumb, Gravity face',
+  options: { width: 300, height: 200, crop: "thumb", gravity: "face" }
+%>
+<h3>Thumb Faces with Gravity</h3>
+<%= render 'image_box',
+  public_id: 'faces',
+  format: 'jpeg',
+  description: 'faces Width 300, Height 200,Crop thumb, Gravity faces',
+  options: { width: 300, height: 200, crop: "thumb", gravity: "faces" }
+%>
+
+<h3>Thumb Logo with Fill</h3>
+<!-- you don't have to use gravity if not needed - fill gives exact dimensions-->
+<%= render 'image_box',
+  public_id: 'logo',
+  format: 'png',
+  description: 'logo Width 100, Height 100,Crop fill',
+  options: { width: 100, height: 100, crop: "fill" }
+%>
+
+<h2>Format</h2>
+<!--let Cloudinary determine the best format base on browser -->
+<%= render 'image_box',
+  public_id: 'dog',
+  format: '',
+  description: 'dog Height 300, Crop scale,  Format auto ',
+  options: { height: 300, crop: "scale", format: "auto" }
+%>
+
+<h2>Quality (Compression)</h2>
+
+<!--let Cloudinary determine quality ~80 or you can supply a number from 1-100 -->
+<%= render 'image_box',
+  public_id: 'faces',
+  format: '',
+  description: 'faces Height 300, Crop scale,  Format auto, Quality auto ',
+  options: { height: 300, crop: "scale", format: "auto" , quality: "auto"}
+%>

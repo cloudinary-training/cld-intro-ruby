@@ -7,6 +7,22 @@
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
+<nav>
+
+  <ul>
+    <li><%= link_to 'Home', root_path%></li>
+    <li><%= link_to 'Optimization', demo_optimization_path%>
+    </li>
+    <li><%= link_to 'Aesthetics', demo_aesthetics_path%>
+    </li>
+    <li><%= link_to 'Fetch', demo_fetch_path%>
+    </li>
+    <li><%= link_to 'Auto-upload', demo_autoupload_path%>
+  </li>
+
+  </ul>
+
+</nav>
 
 <%= yield %>
 
