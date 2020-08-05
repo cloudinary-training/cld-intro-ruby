@@ -12,3 +12,5 @@ Scripts using the Upload and Admin APIs can be found in the `/scripts` directory
 * View helpers defined in [helper.rb](https://github.com/cloudinary/cloudinary_gem/blob/master/lib/cloudinary/helper.rb) are automatically available to Rails projects.
 * [CarrierWave integration documentation](http://cloudinary.com/documentation/rails_integration#carrierwave)
 * [RailsCasts episode on CarrierWave](http://railscasts.com/episodes/253-carrierwave-file-uploads)
+
+[![Run on Repl.it](https://repl.it/badge/github/cloudinary-training/cld-intro-ruby)](https://repl.it/github/cloudinary-training/cld-intro-ruby)
