@@ -23,42 +23,42 @@ puts Cloudinary.config.cloud_name
 ## by resource type
 
 # image (default)
-puts jj Cloudinary::Uploader.upload("pizza.jpg")
+# puts jj Cloudinary::Uploader.upload("pizza.jpg")
 
 # video
-puts jj Cloudinary::Uploader.upload("dog.mp4",:resource_type => "video")
+# puts jj Cloudinary::Uploader.upload("dog.mp4",:resource_type => "video")
 
 # raw
-puts jj Cloudinary::Uploader.upload("BLKCHCRY.TTF",:resource_type => "raw")
+# puts jj Cloudinary::Uploader.upload("BLKCHCRY.TTF",:resource_type => "raw")
 
 # auto
-puts jj Cloudinary::Uploader.upload("BLKCHCRY.TTF",:resource_type => "auto")
+# puts jj Cloudinary::Uploader.upload("BLKCHCRY.TTF",:resource_type => "auto")
 
 ## upload options
 ### Assign public id
-puts jj Cloudinary::Uploader.upload("pizza.jpg", :public_id => "pizza")
+# puts jj Cloudinary::Uploader.upload("pizza.jpg", :public_id => "pizza")
 
 ### random
-puts jj Cloudinary::Uploader.upload("pizza.jpg")
+# puts jj Cloudinary::Uploader.upload("pizza.jpg")
 
 ### use filename, unique, default
-puts jj Cloudinary::Uploader.upload("pizza.jpg",use_filename:true,unique_filename:true)
+# puts jj Cloudinary::Uploader.upload("pizza.jpg",use_filename:true,unique_filename:true)
 
 
 ### use filename, not unique (no additional random characters)
-puts jj Cloudinary::Uploader.upload("pizza.jpg",use_filename:true, unique_filename:false)
+# puts jj Cloudinary::Uploader.upload("pizza.jpg",use_filename:true, unique_filename:false)
 
 ### folder specify
-puts jj Cloudinary::Uploader.upload("pizza.jpg",:folder => "food/my_favorite/")
+# puts jj Cloudinary::Uploader.upload("pizza.jpg",:folder => "food/my_favorite/")
 
-### folder part of filename (creates on the fly)
-puts jj Cloudinary::Uploader.upload("pizza.jpg", :public_id=> "food/my_favorate/pizza")
+## folder part of filename (creates on the fly)
+# puts jj Cloudinary::Uploader.upload("pizza.jpg", :public_id=> "food/my_favorate/pizza")
 
 
 ## Remote asset upload
 
 ### upload api from remote (https)
-puts jj Cloudinary::Uploader.upload("https://cdn.pixabay.com/photo/2015/03/26/09/39/cupcakes-690040__480.jpg")
+# puts jj Cloudinary::Uploader.upload("https://cdn.pixabay.com/photo/2015/03/26/09/39/cupcakes-690040__480.jpg")
 
 
 
