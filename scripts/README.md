@@ -7,9 +7,9 @@
 1. Before running the sample, copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) of your account into `config.rb` file of the project.  See the `config.rb.sample`.
 ```ruby
 # Cloudinary.config do |config|
-#   config.cloud_name = "djh67gzdu"
-#   config.api_key = "722693815472398"
-#   config.api_secret = "aNSb-diC2XR_BbwqPUl2NkiXHbA"
+#   config.cloud_name = ""
+#   config.api_key = ""
+#   config.api_secret = ""
 # end
 Cloudinary.config_from_url("cloudinary://API_KEY:API_SECRET@CLOUD_NAME")
 
