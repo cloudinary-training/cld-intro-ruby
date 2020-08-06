@@ -10,13 +10,13 @@ This sample application demonstrates the usage of Cloudinary's view helpers (e.g
 
 ### Setting up
 
-1. Run `bundle install` in project directory to bring all the required GEMs. For the basic sample, you can also simply run `gem install cloudinary`.
+1. Add `gem 'cloudinary'` to Gemfile.
+1. Run `bundle install` in project directory to bring all the required GEMs. 
 1. Download `cloudinary.yml` for your account from Cloudinary's [Management Console](https://cloudinary.com/console) or by using this [direct link](https://cloudinary.com/console/cloudinary.yml).
 1. Place the downloaded `cloudinary.yml` file into the `config` directory of the project.
-1. Create a `config.rb` file from `config.rb.sample` and add credentials to run the server upload.
-1. Execute the server upload to load assets into your Cloud account to be used by the server
+1. Execute server upload
 ```bash
-ruby server-upload
+rake server_upload
 ```
 1. In the project directory, run `bundle install` to install all the required dependencies.
 1. Run `rails server` to start the development server.
