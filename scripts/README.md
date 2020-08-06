@@ -4,7 +4,7 @@
 
 ## Setting up
 
-1. Before running the sample, copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) of your account into `config.rb` file of the project.  See the `config.rb.sample`.
+1. Before running the sample, create a `config.rb` file and copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.
 ```ruby
 # Cloudinary.config do |config|
 #   config.cloud_name = ""
