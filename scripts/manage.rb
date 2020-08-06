@@ -77,22 +77,3 @@ puts Cloudinary.config.cloud_name
 
 
 
-
-## Presets
-# call from widget in web page or front end app
-# puts jj Cloudinary::Api.create_upload_preset(name: "unsigned-image",
-#   unsigned: true, 
-#   tags: "remote", 
-#   allowed_formats: "jpg,png")
-
-# call from backend only
-# puts jj Cloudinary::Api.create_upload_preset(name: "signed-image",
-#   unsigned: false, 
-#   tags: "remote", 
-#   allowed_formats: "jpg,png")
-
-## AFTER LEARNING ABOUT TRANSFORMATIONS
-
-## Named Transformations
-# puts jj Cloudinary::Api.create_transformation('standard','w_150,h_150,c_thumb,g_auto')
-
