@@ -11,7 +11,7 @@
 #   config.api_key = "722693815472398"
 #   config.api_secret = "aNSb-diC2XR_BbwqPUl2NkiXHbA"
 # end
-Cloudinary.config_from_url("cloudinary://722693815472398:aNSb-diC2XR_BbwqPUl2NkiXHbA@djh67gzdu")
+Cloudinary.config_from_url("cloudinary://API_KEY:API_SECRET@CLOUD_NAME")
 
 ```
 1. For the basic sample, you can also simply run `gem install cloudinary`.
