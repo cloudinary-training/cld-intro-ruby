@@ -4,7 +4,7 @@
  <%= description %>
 </div>
 
-<% options_with_controls = options.merge(:controls => true) %>
+<% options_with_controls = options.merge(:controls => true, :resource_type => 'video') %>
 <%= cl_video_tag(public_id, options_with_controls) %>
 <div class="link">
   <% link_url = cloudinary_url(public_id, options) %>

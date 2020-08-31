@@ -17,6 +17,7 @@ Cloudinary.config_from_url("cloudinary://API_KEY:API_SECRET@CLOUD_NAME")
 1. For the basic sample, you can also simply run `gem install cloudinary`.
 1. Uncomment commands and run `ruby upload.rb` to exercise storage commands.
 1. Uncomment commands and run `ruby manage.rb` to exercise management commands.
+1. Uncomment commands and run `ruby preset.rb` to exercise preset commands
 
 ---
 
