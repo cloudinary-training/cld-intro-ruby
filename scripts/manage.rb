@@ -23,57 +23,71 @@ puts Cloudinary.config.cloud_name
 ## Manage: Admin API and Upload API
 
 ### List all assets (up to 500, default 10)
-# puts jj Cloudinary::Api.resources()
+# jj Cloudinary::Api.resources()
 
 ### List up to 500
-# puts jj Cloudinary::Api.resources(max_results: 500)
+# jj Cloudinary::Api.resources(max_results: 500)
 
-### 
-# puts jj Cloudinary::Api.resources(type:'upload', prefix:'sample')
+### Search by prefix
+# jj Cloudinary::Api.resources(type:'upload', prefix:'sample')
 
 ### Rename an asset default overwrite is false
 # reupload pizza if needed 
-# Cloudinary::Uploader.upload("pizza.jpg", :public_id => "pizza")
-# puts jj Cloudinary::Uploader.rename('pizza', 'my_pizza', {overwrite: true})
+# Cloudinary::Uploader.upload("./assets/cheesecake.jpg", :public_id => "cheesecake")
+# jj Cloudinary::Uploader.rename('cheesecake', 'my_cheesecake', {overwrite: true})
 
 
 ### Remove an asset
 
 #### Upload API
 # load a file to delete, invalidate is false by default, doesn't remove derived
-# puts jj Cloudinary::Uploader.upload("lake.jpg", public_id: "lake")
-# puts jj Cloudinary::Uploader.destroy("lake", invalidate: true)
+# jj Cloudinary::Uploader.upload("./assets/lake.jpg", public_id: "lake")
+# jj Cloudinary::Uploader.destroy("lake", invalidate: true)
 
 
 #### Admin API
 # load a couple of files to delete,invalidate is false by default, allows mulitple and removes derived like DAM
-# puts jj Cloudinary::Uploader.upload("pizza.jpg", public_id: "pizza")
-# puts jj Cloudinary::Uploader.upload("lake.jpg", public_id: "lake")
-# puts jj Cloudinary::Api.delete_resources(public_ids = ["pizza","lake"], invalidate: true)
+# jj Cloudinary::Uploader.upload("./assets/dog.jpg", public_id: "dog")
+# jj Cloudinary::Uploader.upload("./assets/lake.jpg", public_id: "lake")
+# jj Cloudinary::Api.delete_resources(public_ids = ["dog","lake"], invalidate: true)
 
 ### Tag on upload
 
-# puts jj Cloudinary::Uploader.upload("blackberry.jpg", public_id: "blackberry", tags: "fruit,berries")
+# jj Cloudinary::Uploader.upload("./assets/blackberry.jpg", public_id: "blackberry", tags: "fruit,berries")
+# jj Cloudinary::Api.resources_by_tag("berries",{tags: true})
 
 
-### Tag after upload
-# puts jj Cloudinary::Uploader.upload("lake.jpg", public_id: "lake")
-# puts jj Cloudinary::Uploader.add_tag("water", "lake")
+### Tag after upload and then search by tag
+# jj Cloudinary::Uploader.upload("./assets/lake.jpg", public_id: "lake")
+# jj Cloudinary::Uploader.add_tag("water", "lake")
+# jj Cloudinary::Api.resources_by_tag("water",{tags: true})
 
-### Remove a single tag by name 
-# puts jj Cloudinary::Uploader.remove_tag("berries", "blackberry")
 
-### Remove all tags list of public ids to remove tags from 
-# puts jj Cloudinary::Uploader.remove_all_tags(["blackberry","lake"])
+### Remove a single tag by name; search by removed tag and unremoved tag
+# jj Cloudinary::Uploader.remove_tag("berries", "blackberry")
+# jj Cloudinary::Api.resources_by_tag("berries",{tags: true})
+# jj Cloudinary::Api.resources_by_tag("fruit",{tags: true})
 
-### Remove assets from CDN: invalidate option (review)
+
+### Remove all tags list of public ids to remove tags 
+# jj Cloudinary::Uploader.remove_all_tags(["blackberry","lake"])
+# jj Cloudinary::Api.resources_by_tag("fruit",{tags: true})
+# jj Cloudinary::Api.resources_by_tag("water",{tags: true})
+
+
+### Remove assets from CDN: invalidate option (review) - cannot access unversioned URL
+### Sometimes there's a delay due to caching
 # Upload API
-# puts jj Cloudinary::Uploader.upload("lake.jpg", public_id: "lake")
-# puts jj Cloudinary::Uploader.destroy("lake", invalidate: true)
+# jj Cloudinary::Uploader.upload("./assets/dog.jpg", public_id: "dog")
+# jj Cloudinary::Uploader.destroy("dog", invalidate: true)
+# puts Cloudinary::Utils.cloudinary_url("dog")
 
-# Admin API
-# puts jj Cloudinary::Uploader.upload("lake.jpg", public_id: "lake")
-# puts jj Cloudinary::Api.delete_resources(public_ids = ["lake"], invalidate: true)
+# Admin API uses quota but can accept multiple public ids
+# jj Cloudinary::Uploader.upload("./assets/face.jpg", public_id: "face")
+# jj Cloudinary::Uploader.upload("./assets/faces.jpg", public_id: "faces")
+# jj Cloudinary::Api.delete_resources(public_ids = ["face", "faces"], invalidate: true)
+# puts Cloudinary::Utils.cloudinary_url("face")
+# puts Cloudinary::Utils.cloudinary_url("faces")
 
 
 

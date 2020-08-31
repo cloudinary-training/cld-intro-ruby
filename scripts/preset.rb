@@ -25,15 +25,23 @@ puts Cloudinary.config.cloud_name
 
 ## Presets
 # call from widget in web page or front end app
-puts jj Cloudinary::Api.create_upload_preset(name: "unsigned-image",
-  unsigned: true, 
-  tags: "remote", 
-  allowed_formats: "jpg,png")
+# puts jj Cloudinary::Api.create_upload_preset(name: "unsigned-image",
+#   unsigned: true, 
+#   tags: "unsigned", 
+#   allowed_formats: "jpg,png")
 
-# call from backend only
-puts jj Cloudinary::Api.create_upload_preset(name: "signed-image",
-  unsigned: false, 
-  tags: "remote", 
-  allowed_formats: "jpg,png")
+## use signed preset
+# jj Cloudinary::Uploader.unsigned_upload("./assets/logo.png","unsigned-image")
+
+# call from backend or media library only
+# puts jj Cloudinary::Api.create_upload_preset(name: "signed-image",
+#   unsigned: false, 
+#   tags: "signed", 
+#   allowed_formats: "jpg,png")
+
+## use signed preset
+# jj Cloudinary::Uploader.upload("./assets/logo.png", upload_preset: "signed-image")
+
+
 
 
