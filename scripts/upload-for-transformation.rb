@@ -25,5 +25,10 @@ jj Cloudinary::Uploader.upload("./assets/faces.jpg", public_id: "faces")
 jj Cloudinary::Uploader.upload("./assets/lake.jpg", public_id: "lake")
 jj Cloudinary::Uploader.upload("./assets/logo.png", public_id: "logo")
 jj Cloudinary::Uploader.upload("./assets/video.mp4", public_id: "video", resource_type: "raw")
-jj Cloudinary::Uploader.upload("./assets/cloudinary-logo.png", public_id: "cloudinary-logo")
+jj Cloudinary::Uploader.upload("./assets/demo-cloudinary-logo.png", public_id: "demo/cloudinary_logo")
+jj Cloudinary::Uploader.upload("./assets/heather_texture.png", public_id: "demo/heather_texture")
+jj Cloudinary::Uploader.upload("./assets/model2.png", public_id: "demo/model2")
+jj Cloudinary::Uploader.upload("./assets/shirt_only.png", public_id: "demo/shirt_only")
+jj Cloudinary::Uploader.upload("./assets/shirt_only.png", public_id: "demo/shirt_displace")
+
 
