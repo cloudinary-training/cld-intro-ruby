@@ -59,10 +59,11 @@ cd scripts
 Commands are commented out in each script.  You can uncomment and run script or copy and paste to run in ruby/irb.
 
 1. Uncomment commands and run `ruby upload.rb` to exercise storage commands.
-1. Uncomment commands and run `ruby preset.rb` to exercise preset commands
+1. Uncomment commands and run `ruby preset.rb` to exercise preset commands.
 1. Uncomment commands and run `ruby manage.rb` to exercise management commands.
 1. Uncomment commands and run `ruby optimize-transformation.rb` to exercise transformations that optimize.
 1. Uncomment commands and run `ruby aesthetics-transform.rb` to exercise transformations that enhance aesthetics.
+1. Uncomment commands and run `ruby autoupload-fetch.rb` to exercise auto-upload and fetch commands.
 1. Uncomment commands and run `ruby named-transformation.rb` to exercise creating and using named transformations.
 
 ## Using ruby/irb (optional)
