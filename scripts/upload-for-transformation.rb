@@ -25,4 +25,5 @@ jj Cloudinary::Uploader.upload("./assets/faces.jpg", public_id: "faces")
 jj Cloudinary::Uploader.upload("./assets/lake.jpg", public_id: "lake")
 jj Cloudinary::Uploader.upload("./assets/logo.png", public_id: "logo")
 jj Cloudinary::Uploader.upload("./assets/video.mp4", public_id: "video", resource_type: "raw")
+jj Cloudinary::Uploader.upload("./assets/cloudinary-logo.png", public_id: "cloudinary-logo")
 
