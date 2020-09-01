@@ -88,7 +88,7 @@ ruby bin/console.rb
 
 
 
-
+## Rails Server (bonus/optional)
 The directory `/server` is a bonus that contains code to run a Rails server.
 
 
