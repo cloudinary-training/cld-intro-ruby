@@ -4,7 +4,7 @@
 
 ## Ruby install
 
-Use a version of Ruby >= 2.4.  In this repo we are using version 2.5.7 as indicated in the `./scripts/.ruby-version` file.  If you are using a different version of ruby, you can change the value in that file.
+Use a version of **Ruby >= 2.4**.  In this repo we are using version 2.5.7 as indicated in the `./scripts/.ruby-version` file.  If you are using a different version of ruby, you can change the value in that file.
 
 ### Mac
 Mac comes with Ruby installed.
@@ -26,21 +26,18 @@ The scripts are run from the `scripts` directory.
 cd scripts
 ```
 
+1. Clone this repo.
 
-
-# Basic Commands #
-
-<h2 style="color:red">WIP: This is source code for a course under development.</h2>
-
-## Setting up
-
-1. Install Cloudinary gem. 
+2. Install Cloudinary gem. 
 
 ```bash 
 `gem install cloudinary`
 ```
 
-1. Before running the sample, create a `./scripts/config.rb` file and copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.
+3. Set up credentials.
+
+Before running the sample, create a `./scripts/config.rb` file and copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.  The code below shows two alternatives for adding credentials.
+
 ```ruby
 # Cloudinary.config do |config|
 #   config.cloud_name = ""
@@ -48,7 +45,7 @@ cd scripts
 #   config.api_secret = ""
 # end
 Cloudinary.config_from_url("cloudinary://API_KEY:API_SECRET@CLOUD_NAME")
-
+```
 
 ## Exercises
 You will see that the images and video to be used in the exercises are in the `assets` directory.  Scripts access assets relative to the scripts directory so avigate to the `scripts` directory.  
@@ -57,6 +54,7 @@ You will see that the images and video to be used in the exercises are in the `a
 cd scripts
 ```
 
+### Running the Exercise Code
 
 Commands are commented out in each script.  You can uncomment and run script or copy and paste to run in ruby/irb.
 
@@ -67,7 +65,7 @@ Commands are commented out in each script.  You can uncomment and run script or 
 1. Uncomment commands and run `ruby aesthetics-transform.rb` to exercise transformations that enhance aesthetics.
 1. Uncomment commands and run `ruby named-transformation.rb` to exercise creating and using named transformations.
 
-## Using ruby/irb
+## Using ruby/irb (optional)
 
 We are using irb binding. You need version 2.4 or higher of ruby to use this.  We are using cloudinary.yml for irb binding.  The yml is used for rails.  We call out the Development credentials in this binding.
 
