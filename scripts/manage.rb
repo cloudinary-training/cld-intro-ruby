@@ -32,7 +32,7 @@ puts Cloudinary.config.cloud_name
 # jj Cloudinary::Api.resources(type:'upload', prefix:'sample')
 
 ### Rename an asset default overwrite is false
-# reupload pizza if needed 
+# reupload cheesecake if needed 
 # Cloudinary::Uploader.upload("./assets/cheesecake.jpg", :public_id => "cheesecake")
 # jj Cloudinary::Uploader.rename('cheesecake', 'my_cheesecake', {overwrite: true})
 
@@ -73,21 +73,5 @@ puts Cloudinary.config.cloud_name
 # jj Cloudinary::Uploader.remove_all_tags(["blackberry","lake"])
 # jj Cloudinary::Api.resources_by_tag("fruit",{tags: true})
 # jj Cloudinary::Api.resources_by_tag("water",{tags: true})
-
-
-### Remove assets from CDN: invalidate option (review) - cannot access unversioned URL
-### Sometimes there's a delay due to caching
-# Upload API
-# jj Cloudinary::Uploader.upload("./assets/dog.jpg", public_id: "dog")
-# jj Cloudinary::Uploader.destroy("dog", invalidate: true)
-# puts Cloudinary::Utils.cloudinary_url("dog")
-
-# Admin API uses quota but can accept multiple public ids
-# jj Cloudinary::Uploader.upload("./assets/face.jpg", public_id: "face")
-# jj Cloudinary::Uploader.upload("./assets/faces.jpg", public_id: "faces")
-# jj Cloudinary::Api.delete_resources(public_ids = ["face", "faces"], invalidate: true)
-# puts Cloudinary::Utils.cloudinary_url("face")
-# puts Cloudinary::Utils.cloudinary_url("faces")
-
 
 

@@ -30,7 +30,7 @@ puts Cloudinary.config.cloud_name
 #   gravity: "auto", format: "auto" , quality: "auto",
 #   radius: "max"})
 
-# crop pad to capture full image with padding to prvent skew
+# crop pad to capture full image with padding to prevent skew
 # change AR vertical to horizontal  
 # puts Cloudinary::Utils.cloudinary_url("face", 
 #     transformation: { width: 300, height: 200, crop: "pad", 

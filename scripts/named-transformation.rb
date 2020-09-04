@@ -26,6 +26,10 @@ puts Cloudinary.config.cloud_name
 # jj Cloudinary::Api.create_transformation('standard','w_150,h_150,c_thumb,g_auto')
 
 ## Use Named Transformation
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", 
+#   transformation: [{transformation:["standard"]}])
+
+## Use Named Transformation with f_auto
 # jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg", public_id: "cheesecake")
 
 # puts Cloudinary::Utils.cloudinary_url("cheesecake", 
@@ -64,3 +68,4 @@ puts Cloudinary.config.cloud_name
 # puts Cloudinary::Utils.cloudinary_url("demo/shirt_only.png", 
 #     transformation: [{transformation:["complex"]},{transformation:[fetch_format: "auto"]}])
    
+

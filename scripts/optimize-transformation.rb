@@ -19,36 +19,50 @@ puts Cloudinary.config.cloud_name
 # Cropping and Gravity
 
 # default cropping mode is scale with 1 dimension
-# puts Cloudinary::Utils.cloudinary_url("dog", transformation: {width: 300, crop: "scale"})
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, crop: "scale"})
+# if you add a second dimension it may skew depending on original AR
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "scale"})
+
+# 2 dimensions - no skew but not exact dimensions
+# use fit to guarantee that it doesn't skew and fits within the dimensions
+# not guaranenteed to result in exact dimensions specified
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "fit"})
+
+# 2 dimensions with no skew and guaranteed exact dimensions rendered with possible padding
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "pad"})
 
 # cropping takes a chunk out of an image
 # puts Cloudinary::Utils.cloudinary_url("dog", transformation: {width: 300, height: 300, crop: "crop"})
 
 #use gravity with thumb to get focus on someting interesting or a compass point
 # puts Cloudinary::Utils.cloudinary_url("dog", transformation: {width: 300, height: 300, crop: "thumb", gravity: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height: 300, crop: "thumb", gravity: "auto"})
 
-
-
-# face with gravity: compare auto, face, fill vs thumb
-# not all crop types can use gravity
-# puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "fill", gravity: "face"})
+# crop with gravity: auto,  fill vs thumb
+# not all crop types can use gravity, only: crop, fill, lfill, fill_pad (auto g only) or thumb
 # puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "fill", gravity: "auto"})
-# puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "thumb", gravity: "face"})
+# puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "thumb", gravity: "auto"})
 
+# gravity auto,look at debug to see how Cld is detecting  faces
+# puts Cloudinary::Utils.cloudinary_url("faces", transformation: {width: 300, height: 300, crop: "fill", gravity: "auto"})
+# https://res.cloudinary.com/<cloud name>/image/upload/c_crop,g_auto:debug,h_300,w_300/faces
 
-# faces with gravity
-# puts Cloudinary::Utils.cloudinary_url("faces", transformation: {width: 300, height: 300, crop: "fill", gravity: "faces"})
+# gravity face
+# puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "crop", gravity: "face"})
+# puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "thumb", gravity: "face"})
 
-# logo with thumb
+# logo with thumb - watermark, branding
 # puts Cloudinary::Utils.cloudinary_url("logo", transformation: {width: 100, height: 100, crop: "thumb"})
+# Cloudinary's new logo using scaling
+# puts Cloudinary::Utils.cloudinary_url("cloudinary-logo", transformation: {width: 100, crop:"scale"})
 
-# Compression
 
-# puts Cloudinary::Utils.cloudinary_url("faces", transformation: {height: 300, crop: "scale", quality: "auto"})
+# Compression - use media debugger to see the change in size
+# puts Cloudinary::Utils.cloudinary_url("cookies")
+# puts Cloudinary::Utils.cloudinary_url("cookies", transformation: { quality: "auto"})
 
 # auto everything - add auto format
 # use media debugger to inspect
-# look at size without auto format
-puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto"})
 # add auto format
-puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto",fetch_format: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto",fetch_format: "auto"})

@@ -22,9 +22,6 @@ https://rubyinstaller.org/
 
 The scripts are run from the `scripts` directory.
 
-```bash
-cd scripts
-```
 
 1. Clone this repo.
 
@@ -36,19 +33,21 @@ cd scripts
 
 3. Set up credentials.
 
-Before running the sample, create a `./scripts/config.rb` file and copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.  The code below shows two alternatives for adding credentials.
+Create a `./scripts/config.rb` file and copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.  The code below shows two alternatives for adding credentials.
+
+There are 2 ways you can make the credentials available.
 
 ```ruby
 # Cloudinary.config do |config|
-#   config.cloud_name = ""
-#   config.api_key = ""
-#   config.api_secret = ""
+#   config.cloud_name = "CLOUD_NAME"
+#   config.api_key = "API_KEY"
+#   config.api_secret = "API_SECRET"
 # end
 Cloudinary.config_from_url("cloudinary://API_KEY:API_SECRET@CLOUD_NAME")
 ```
 
 ## Exercises
-You will see that the images and video to be used in the exercises are in the `assets` directory.  Scripts access assets relative to the scripts directory so avigate to the `scripts` directory.  
+You will see that the images and video to be used in the exercises are in the `assets` directory.  Scripts access assets relative to the scripts directory so navigate to the `scripts` directory.  
 
 ```bash
 cd scripts
@@ -62,7 +61,7 @@ Commands are commented out in each script.  You can uncomment and run script or 
 1. Uncomment commands and run `ruby preset.rb` to exercise preset commands.
 1. Uncomment commands and run `ruby autoupload-fetch.rb` to exercise auto-upload and fetch commands.
 1. Uncomment commands and run `ruby manage.rb` to exercise management commands.
-1. Uncomment commands and run `ruby upload-for-transformatins.rb` to load assets used in transformation scripts.
+1. Uncomment commands and run `ruby upload-for-transformations.rb` to load assets used in transformation scripts.
 1. Uncomment commands and run `ruby optimize-transformation.rb` to exercise transformations that optimize.
 1. Uncomment commands and run `ruby aesthetics-transform.rb` to exercise transformations that enhance aesthetics.
 1. Uncomment commands and run `ruby named-transformation.rb` to exercise creating and using named transformations.

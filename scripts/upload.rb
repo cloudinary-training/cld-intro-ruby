@@ -21,9 +21,6 @@ puts Cloudinary.config.cloud_name
 
 ## by resource type
 
-
-
-
 # image (default)
 # jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg")
 
@@ -41,22 +38,18 @@ puts Cloudinary.config.cloud_name
 ### Assign public id
 # jj Cloudinary::Uploader.upload("./assets/face.jpg", :public_id => "face")
 
-### random/security
-# jj Cloudinary::Uploader.upload("./assets/dog.jpg")
-
-### use filename, unique, default
+### use filename, unique
 # jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",use_filename:true,unique_filename:true)
 
 
 ### use filename, not unique (no additional random characters)
 # jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",use_filename:true, unique_filename:false)
-# puts Cloudinary::Utils.cloudinary_url("./assets/cheesecake", transformation: {width: 300, height: 300, crop: "thumb"})
 
 ### folder specify
 # jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",:folder => "food/my_favorite/")
 
 ## folder part of filename (creates on the fly)
-# jj Cloudinary::Uploader.upload("./assets/dog.jpg", :public_id=> "food/my_favorate/dog")
+# jj Cloudinary::Uploader.upload("./assets/dog.jpg", :public_id=> "food/my_favorite/dog")
 
 
 ## Remote asset upload
