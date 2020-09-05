@@ -49,7 +49,7 @@ puts Cloudinary.config.cloud_name
 # jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",:folder => "food/my_favorite/")
 
 ## folder part of filename (creates on the fly)
-# jj Cloudinary::Uploader.upload("./assets/dog.jpg", :public_id=> "food/my_favorite/dog")
+# jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg", :public_id=> "food/my_favorite/cheesecake")
 
 
 ## Remote asset upload
