@@ -126,6 +126,45 @@ puts jj Cloudinary::Api.create_upload_preset(name: "signed-image",
 jj Cloudinary::Uploader.upload("./assets/logo.png", upload_preset: "signed-image")
 ```
 
+## Auto-upload and Fetch
+
+Fetch and Auto-upload are techniques for moving assets from remote locations into your cloud.  While the Upload API allows you to load from remote locations, these techniques are good for loading assets into the cloud only when they are requested by the user.
+
+Instead of using API calls to upload and cache assets, we'll create URLs and then when we request the URL in the browser, the asset will get loaded and cached.
+
+### Fetch
+Fetch lets you load an asset by specifying the remote URL with a "fetch" delivery type.  When using the Upload API we were using the "upload" delivery type and we didn't specify it because it was the default.  You saw the term `upload` in the URLs in the Upload API response.  In order to use fetch, we'll specify "fetch" when we create a URL.
+
+```ruby 
+puts Cloudinary::Utils.cloudinary_url("https://cdn.pixabay.com/photo/2015/03/26/09/39/cupcakes-690040__480.jpg", type: "fetch")
+```
+
+### Auto-upload
+In order to use Auto-Upload you need to go to the DAM settings upload tab.  Add a mapping between a directory in your cloud and a remote path.  For this exercise, create a mapping between `remote-media` and `https://cloudinary-training.github.io/cld-advanced-concepts/assets/`.  Notice we are specifying a specific asset, but a path.  
+
+Fetch can only be used for images, but Auto upload can be used for all asset types.
+
+We use the URL helper in the Ruby SDK to create a URL.  
+
+#### Auto-upload Video
+
+```ruby
+puts Cloudinary::Utils.cloudinary_url("remote-media/video/snowboarding", {resource_type: "video",
+   transformation:{width: 300, crop: "scale"}})
+```
+
+#### Auto-upload Image
+
+```ruby
+puts Cloudinary::Utils.cloudinary_url("remote-media/images/dolphin", 
+   {transformation:{width: 300, crop: "scale"}})
+```
+
+#### Auto-upload Raw
+
+```ruby
+puts Cloudinary::Utils.cloudinary_url("remote-media/raw/data.json", resource_type: "raw")
+```
 
 ## Manage
 
