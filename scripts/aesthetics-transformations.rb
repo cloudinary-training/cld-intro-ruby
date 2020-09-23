@@ -57,7 +57,7 @@ puts Cloudinary.config.cloud_name
 # zorro
 # puts Cloudinary::Utils.cloudinary_url("lake", 
 #   transformation: { width: 300, height: 300, crop: "thumb",
-#   gravity: "face", fetch_format: "auto" , quality: "auto",
+#   fetch_format: "auto" , quality: "auto",
 #   effect: "art:zorro"})
 
 # cartoonify
