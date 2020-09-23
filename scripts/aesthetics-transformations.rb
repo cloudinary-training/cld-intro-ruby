@@ -27,14 +27,14 @@ puts Cloudinary.config.cloud_name
 # puts Cloudinary::Utils.cloudinary_url("blackberry", transformation: { 
 #   border: "10px_solid_rgb:bde4fb",
 #   width: 300, height: 300, crop: "thumb", 
-#   gravity: "auto", format: "auto" , quality: "auto",
+#   gravity: "auto", fetch_format: "auto" , quality: "auto",
 #   radius: "max"})
 
 # crop pad to capture full image with padding to prevent skew
 # change AR vertical to horizontal  
 # puts Cloudinary::Utils.cloudinary_url("face", 
 #     transformation: { width: 300, height: 200, crop: "pad", 
-#     format: "auto" , quality: "auto",
+#     fetch_format: "auto" , quality: "auto",
 #     background: "red"})
 
 # Effects and Filters
@@ -49,7 +49,7 @@ puts Cloudinary.config.cloud_name
 # improve color, contrast, lightness
 # puts Cloudinary::Utils.cloudinary_url("lake", 
 #   transformation: { width: 300, height: 300, crop: "thumb",
-#     gravity: "auto", format: "auto" , quality: "auto",
+#     gravity: "auto", fetch_format: "auto" , quality: "auto",
 #     effect: "improve"})
 
 # Art filters
@@ -57,20 +57,20 @@ puts Cloudinary.config.cloud_name
 # zorro
 # puts Cloudinary::Utils.cloudinary_url("lake", 
 #   transformation: { width: 300, height: 300, crop: "thumb",
-#     gravity: "face", format: "auto" , quality: "auto",
-#     effect: "art:zorro"})
+#   gravity: "face", fetch_format: "auto" , quality: "auto",
+#   effect: "art:zorro"})
 
 # cartoonify
 # puts Cloudinary::Utils.cloudinary_url("face", 
 #   transformation: { width: 300, height: 300, crop: "thumb",
-#     gravity: "face", format: "auto" , quality: "auto",
+#     gravity: "face", fetch_format: "auto" , quality: "auto",
 #     effect: "cartoonify"})
 
 # color tint
 
 # puts Cloudinary::Utils.cloudinary_url("face", 
 #   transformation: { width: 300, height: 300, crop: "thumb",
-#     gravity: "face", format: "auto" , quality: "auto",
+#     gravity: "face", fetch_format: "auto" , quality: "auto",
 #     effect: "tint:40:magenta"})
 
 # duotone: chained transformation grayscale + tint
@@ -78,7 +78,7 @@ puts Cloudinary.config.cloud_name
 # transformation: [
 #   {transformation: [width: 300, height: 300, crop: "thumb",gravity: "face", effect: "grayscale"]}, 
 #   { transformation:[effect: "tint:40:magenta"]},
-#   { transformation:[format: "auto",quality: "auto"]}
+#   { transformation:[fetch_format: "auto",quality: "auto"]}
 #   ]
 # )
 

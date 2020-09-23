@@ -385,7 +385,7 @@ Add borders with a syntax similar to CSS.  You can use HTML Color names, rgb, or
 puts Cloudinary::Utils.cloudinary_url("blackberry", transformation: { 
    border: "10px_solid_rgb:bde4fb",
    width: 300, height: 300, crop: "thumb", 
-   gravity: "auto", format: "auto" , quality: "auto",
+   gravity: "auto", fetch_format: "auto" , quality: "auto",
    radius: "max"})
 ```
 
@@ -414,7 +414,7 @@ Use the `effect` option. Set the width of the outline in pixels.
 ```ruby
 puts Cloudinary::Utils.cloudinary_url("lake", 
    transformation: { width: 300, height: 300, crop: "thumb",
-     gravity: "auto", format: "auto" , quality: "auto",
+     gravity: "auto", fetch_format: "auto" , quality: "auto",
      effect: "improve"})
 ```
 
@@ -425,7 +425,7 @@ puts Cloudinary::Utils.cloudinary_url("lake",
 ```ruby
 puts Cloudinary::Utils.cloudinary_url("lake", 
    transformation: { width: 300, height: 300, crop: "thumb",
-     gravity: "face", format: "auto" , quality: "auto",
+     gravity: "face", fetch_format: "auto" , quality: "auto",
     effect: "art:zorro"})
 ```
 
@@ -435,7 +435,7 @@ puts Cloudinary::Utils.cloudinary_url("lake",
 
  puts Cloudinary::Utils.cloudinary_url("face", 
   transformation: { width: 300, height: 300, crop: "thumb",
-     gravity: "face", format: "auto" , quality: "auto",
+     gravity: "face", fetch_format: "auto" , quality: "auto",
      effect: "cartoonify"})
 ```
 
@@ -444,7 +444,7 @@ puts Cloudinary::Utils.cloudinary_url("lake",
 ```ruby
  puts Cloudinary::Utils.cloudinary_url("face", 
    transformation: { width: 300, height: 300, crop: "thumb",
-     gravity: "face", format: "auto" , quality: "auto",
+     gravity: "face", fetch_format: "auto" , quality: "auto",
      effect: "tint:40:magenta"})
 ```
 
@@ -456,7 +456,7 @@ This is a chained transformation.  It instructs Cloudinary to run transformation
  transformation: [
    {transformation: [width: 300, height: 300, crop: "thumb",gravity: "face", effect: "grayscale"]}, 
   { transformation:[effect: "tint:40:magenta"]},
-   { transformation:[format: "auto",quality: "auto"]}
+   { transformation:[fetch_format: "auto",quality: "auto"]}
    ]
  )
 ```
