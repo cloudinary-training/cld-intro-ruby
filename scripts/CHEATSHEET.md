@@ -315,7 +315,9 @@ Generate a URL with gravity auto and debug to better understand how the AI that 
 puts Cloudinary::Utils.cloudinary_url("faces", transformation: {width: 300, height: 300, crop: "fill", gravity: "auto"})
 ```
 
-Now add the debug (use your cloud name) by adding `:debug` after the `g_auto`.
+The image below shows how Cloudinary recognizes faces.
+
+<img width="400" alt="Gravity Auto Debug" src="./assets/gravity-debug.png">
 
 ```
 https://res.cloudinary.com/<cloud name>/image/upload/c_crop,g_auto:debug,h_300,w_300/faces

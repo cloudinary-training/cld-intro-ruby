@@ -43,9 +43,8 @@ puts Cloudinary.config.cloud_name
 # puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "fill", gravity: "auto"})
 # puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "thumb", gravity: "auto"})
 
-# gravity auto,look at debug to see how Cld is detecting  faces
-# puts Cloudinary::Utils.cloudinary_url("faces", transformation: {width: 300, height: 300, crop: "fill", gravity: "auto"})
-# https://res.cloudinary.com/<cloud name>/image/upload/c_crop,g_auto:debug,h_300,w_300/faces
+
+# You can open the image file ./assets/gravity-debug.png to see how Cloudinary recognizes faces.
 
 # gravity face
 # puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "crop", gravity: "face"})
