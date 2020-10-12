@@ -352,20 +352,22 @@ puts Cloudinary::Utils.cloudinary_url("cookies", transformation: { quality: "aut
 ```
 
 ### Browser file formats
-Different browsers can render different file formats.  Formats provide optimization in terms of size. and quality.
+Image file formats provide standards for storing image data and can be compressed or uncompressed.  Compressed formats can be lossy or non-lossy.  Different devices and browsers can render different file formats.  Cloudinary can optimize to provide the best format for the device or browser requesting the image. 
 
-Use `fetch_format: auto` which translates to `f_auto` to let Cloudinary return an image container that is optimized for the requesting browser.
+Use `format: auto` which translates to `f_auto` to let Cloudinary return an image container that is optimized for the requesting browser. Format optimization handled at the CDN layer.
 
-Format optimization handled at the CDN layer.
+Support for file formats is constantly evolving.  Some examples of common image and video formats are: 
 
-* webp: chrome, firefox, edge
-* ogg: safari
-* jpg: all browsers
+* webp: Chrome, Edge, Firefox, Safari (image)
+* jpg: Chrome, Edge, Firefox, Internet Explorer, Opera, Safari (image)
+* webm: Chrome, Edge, Firefox (video)
+* ogv: Chrome, Edge, Firefox (video)
+
 
 In the example below we generate "auto everything"
 
 ```ruby
-puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto"})
+puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto", format: "auto"})
 ```
 
 ## Aesthetic Transformations
