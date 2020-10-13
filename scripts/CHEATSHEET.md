@@ -91,7 +91,7 @@ You can use this for front end widgets and API calls.  You don't need to hide se
 We're adding a tag and limiting formats that can be uploaded.
 
 ```ruby
-puts jj Cloudinary::Api.create_upload_preset(name: "unsigned-image",
+jj Cloudinary::Api.create_upload_preset(name: "unsigned-image",
   unsigned: true, 
   tags: "unsigned", 
   allowed_formats: "jpg,png")
@@ -114,7 +114,7 @@ Use the signed preset for backend scripts with access to API_SECRET credentials.
 We're adding a tag and limiting formats that can be uploaded.
 
 ```ruby
-puts jj Cloudinary::Api.create_upload_preset(name: "signed-image",
+jj Cloudinary::Api.create_upload_preset(name: "signed-image",
   unsigned: false, 
   tags: "signed", 
   allowed_formats: "jpg,png")
