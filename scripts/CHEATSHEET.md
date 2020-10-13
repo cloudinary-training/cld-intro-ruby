@@ -22,20 +22,20 @@ jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg")
 Upload video
 
 ```ruby
-jj Cloudinary::Uploader.upload("./assets/video.mp4",:resource_type => "video")
+jj Cloudinary::Uploader.upload("./assets/video.mp4",resource_type:  "video")
 ```
 
 ### raw
 Upload raw
 
 ```ruby
-jj Cloudinary::Uploader.upload("./assets/BLKCHCRY.TTF",:resource_type => "raw")
+jj Cloudinary::Uploader.upload("./assets/BLKCHCRY.TTF",resource_type: "raw")
 ```
 
 ### auto
 
 ```ruby
-jj Cloudinary::Uploader.upload("./assets/video.mp4",:resource_type => "auto")
+jj Cloudinary::Uploader.upload("./assets/video.mp4",resource_type: "auto")
 ```  
 
 ### Upload Options
@@ -43,7 +43,7 @@ jj Cloudinary::Uploader.upload("./assets/video.mp4",:resource_type => "auto")
 #### Assign public id
 
 ```ruby
-jj Cloudinary::Uploader.upload("./assets/face.jpg", :public_id => "face")
+jj Cloudinary::Uploader.upload("./assets/face.jpg", public_id: "face")
 ```
 
 #### Use filename, unique 
@@ -62,13 +62,13 @@ use filename, not unique (no additional random characters)
 #### Specify folder name
 
 ```ruby
-jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",:folder => "food/my_favorite/")
+jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",folder: "food/my_favorite/")
 ```
 
 #### Let Cloudinary create folder on the fly from public id
 
 ```ruby
-jj Cloudinary::Uploader.upload("./assets/dog.jpg", :public_id=> "food/my_favorite/dog")
+jj Cloudinary::Uploader.upload("./assets/dog.jpg", public_id: "food/my_favorite/dog")
 ```
 
 ### Remote asset upload

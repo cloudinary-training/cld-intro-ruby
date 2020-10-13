@@ -26,17 +26,17 @@ puts Cloudinary.config.cloud_name
 
 
 # video
-# jj Cloudinary::Uploader.upload("./assets/video.mp4",:resource_type => "video")
+# jj Cloudinary::Uploader.upload("./assets/video.mp4",resource_type: "video")
 
 # raw
-# jj Cloudinary::Uploader.upload("./assets/BLKCHCRY.TTF",:resource_type => "raw")
+# jj Cloudinary::Uploader.upload("./assets/BLKCHCRY.TTF",resource_type: "raw")
 
 # auto
-# jj Cloudinary::Uploader.upload("./assets/video.mp4",:resource_type => "auto")
+# jj Cloudinary::Uploader.upload("./assets/video.mp4",resource_type: "auto")
 
 ## upload options
 ### Assign public id
-# jj Cloudinary::Uploader.upload("./assets/face.jpg", :public_id => "face")
+# jj Cloudinary::Uploader.upload("./assets/face.jpg", public_id: "face")
 
 ### use filename, unique
 # jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",use_filename:true,unique_filename:true)
@@ -46,10 +46,10 @@ puts Cloudinary.config.cloud_name
 # jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",use_filename:true, unique_filename:false)
 
 ### folder specify
-# jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",:folder => "food/my_favorite/")
+# jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",folder: "food/my_favorite/")
 
 ## folder part of filename (creates on the fly)
-# jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg", :public_id=> "food/my_favorite/cheesecake")
+# jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg", public_id: "food/my_favorite/cheesecake")
 
 
 ## Remote asset upload

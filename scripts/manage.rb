@@ -33,7 +33,7 @@ puts Cloudinary.config.cloud_name
 
 ### Rename an asset default overwrite is false
 # reupload cheesecake if needed 
-# Cloudinary::Uploader.upload("./assets/cheesecake.jpg", :public_id => "cheesecake")
+# Cloudinary::Uploader.upload("./assets/cheesecake.jpg", public_id: "cheesecake")
 # jj Cloudinary::Uploader.rename('cheesecake', 'my_cheesecake', {overwrite: true})
 
 
