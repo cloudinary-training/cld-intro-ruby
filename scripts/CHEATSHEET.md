@@ -278,7 +278,8 @@ puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300,
 Use padding to ensure that the image is the exact dimensions specified in the `height` and `width` options.
 
 ```ruby
-puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "pad"})
+puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "pad", background: "auto:border"})
+
 ```
 
 #### crop: Intro to Gravity
