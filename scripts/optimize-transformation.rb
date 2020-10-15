@@ -29,7 +29,7 @@ puts Cloudinary.config.cloud_name
 # puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "fit"})
 
 # 2 dimensions with no skew and guaranteed exact dimensions rendered with possible padding
-# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "pad", background: "auto:border"})
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "pad", background: "auto"})
 
 # cropping takes a chunk out of an image
 # puts Cloudinary::Utils.cloudinary_url("dog", transformation: {width: 300, height: 300, crop: "crop"})
