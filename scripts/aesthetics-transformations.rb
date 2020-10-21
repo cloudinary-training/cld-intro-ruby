@@ -47,10 +47,10 @@ puts Cloudinary.config.cloud_name
 #     effect: "outline:15", color: "orange"})
 
 # improve color, contrast, lightness
-# puts Cloudinary::Utils.cloudinary_url("lake", 
-#   transformation: { width: 300, height: 300, crop: "thumb",
-#     gravity: "auto", fetch_format: "auto" , quality: "auto",
-#     effect: "improve"})
+puts Cloudinary::Utils.cloudinary_url("lake", 
+  transformation: { width: 300, height: 300, crop: "thumb",
+    gravity: "auto", fetch_format: "auto" , quality: "auto",
+    effect: "improve:outdoor"})
 
 # Art filters
 
