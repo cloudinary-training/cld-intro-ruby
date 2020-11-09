@@ -542,18 +542,12 @@ If the named transformation already exists you'll get an error letting your know
 #### The transformation
 
 ```ruby
- jj Cloudinary::Utils.cloudinary_url("demo/shirt_only.png", 
-   transformation: {transformation:[
-     {opacity: 0},
-     {overlay: "demo:cloudinary_logo",effect: "brightness:-21",x:-5,y:-200, width:324},
-     {overlay: {font_family: "Coustard", font_size: 100,color:"rgb:999999", font_weight: "bold",text: "Hello Jon"},
-    opacity:70, y:0, width: 365},
-     {overlay: "demo:shirt_displace",effect: "displace",x:10,y:10},
-     {underlay: "demo:shirt_only",effect: "red:-50"},
-     {underlay: "demo:model2"},
-     {overlay: "demo:heather_texture",opacity:29},
-     {fetch_format: "auto"}
-   ]})
+jj Cloudinary::Utils.cloudinary_url("shirt_only.png", 
+  transformation: {transformation:[
+    {overlay: "logo",effect: "brightness:-21",x:-10,y:-200, width:304, radius:"max"},
+    {overlay: {font_family: "Coustard", font_size: 100,color:"rgb:999999", font_weight: "bold",
+      text: "Hello Jon"}, opacity:70, y:0, x:-10, width: 365}
+  ]})
 ```
 
 #### make it a named transformation
@@ -561,15 +555,10 @@ Don't include `f_auto`
 
 ```ruby
  jj Cloudinary::Api.create_transformation("complex", {transformation:[
-     {opacity: 0},
-     {overlay: "demo:cloudinary_logo",effect: "brightness:-21",x:-5,y:-200, width:324},
-     {overlay: {font_family: "Coustard", font_size: 100,color:"rgb:999999", font_weight: "bold",text: "Hello Jon"},
-     opacity:70, y:0, width: 365},
-     {overlay: "demo:shirt_displace",effect: "displace",x:10,y:10},
-     {underlay: "demo:shirt_only",effect: "red:-50"},
-     {underlay: "demo:model2"},
-     {overlay: "demo:heather_texture",opacity:29}
-   ]})
+    {overlay: "logo",effect: "brightness:-21",x:-10,y:-200, width:304, radius:"max"},
+    {overlay: {font_family: "Coustard", font_size: 100,color:"rgb:999999", font_weight: "bold",
+      text: "Hello Jon"}, opacity:70, y:0, x:-10, width: 365}
+  ]})
   ```
 
   ### The complex transformation is now easier to use
