@@ -23,10 +23,10 @@ puts Cloudinary.config.cloud_name
 # create a mapped folder in settings named "remote-media" pointing to "https://cloudinary-training.github.io/cld-advanced-concepts/assets/"
 
 # all resource types
-# puts Cloudinary::Utils.cloudinary_url("remote-media/video/snowboarding", {resource_type: "video",
+# puts Cloudinary::Utils.cloudinary_url("remote-media/video/snowboarding.mp4", {resource_type: "video",
 #   transformation:{width: 300, crop: "scale"}})
 
-# puts Cloudinary::Utils.cloudinary_url("remote-media/images/dolphin", 
+# puts Cloudinary::Utils.cloudinary_url("remote-media/images/dolphin.jpg", 
 #   {transformation:{width: 300, crop: "scale"}})
 
 # puts Cloudinary::Utils.cloudinary_url("remote-media/raw/data.json", resource_type: "raw")

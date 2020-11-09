@@ -332,14 +332,7 @@ puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, he
 puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "thumb", gravity: "face"})
 ```
 
-#### Branding and Watermarking using cropping
 
-```ruby
-puts Cloudinary::Utils.cloudinary_url("logo", transformation: {width: 100, height: 100, crop: "thumb"})
-
-puts Cloudinary::Utils.cloudinary_url("cloudinary-logo", transformation: {width: 100, crop:"scale"})
-
-```
 ### Compression
 
 Compression is provided with the `quality` option.  You can specify a numeric value form 0-100 with 100 being the highest quality and the least compression.  You can also let Cloudinary determine the best quality with the least size by using `quality: auto`.  The is a recommended best practice.
@@ -493,7 +486,7 @@ Required options are font_family, font_size, and text.
    { resource_type:"video", 
      transformation: [
      {width: 400, crop: "scale", },
-     {overlay: "cloudinary-logo", height:25,gravity:"south_east"}
+     {overlay: "logo", height:25,gravity:"south_east"}
    ]
    }
  )

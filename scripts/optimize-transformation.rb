@@ -44,7 +44,6 @@ puts Cloudinary.config.cloud_name
 # puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "thumb", gravity: "auto"})
 
 
-# You can open the image file ./assets/gravity-debug.png to see how Cloudinary recognizes faces.
 
 # gravity face
 # puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "crop", gravity: "face"})
@@ -53,15 +52,19 @@ puts Cloudinary.config.cloud_name
 # logo with thumb - watermark, branding
 # puts Cloudinary::Utils.cloudinary_url("logo", transformation: {width: 100, height: 100, crop: "thumb"})
 # Cloudinary's new logo using scaling
-# puts Cloudinary::Utils.cloudinary_url("cloudinary-logo", transformation: {width: 100, crop:"scale"})
+# puts Cloudinary::Utils.cloudinary_url("logo", transformation: {width: 100, crop:"scale"})
 
 
-# Compression - use media debugger to see the change in size
+
+# use media debugger to inspect
 # puts Cloudinary::Utils.cloudinary_url("cookies")
+
+#Format
+# add auto format
+# puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto",fetch_format: "auto"})
+
+# Compression: quality
 # puts Cloudinary::Utils.cloudinary_url("cookies", transformation: { quality: "auto"})
 
-# auto everything - add auto format
-# use media debugger to inspect
-# puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto"})
-# add auto format
+# auto everything - format and quality
 # puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto",fetch_format: "auto"})

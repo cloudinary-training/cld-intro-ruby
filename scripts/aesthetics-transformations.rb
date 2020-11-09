@@ -85,7 +85,6 @@ puts Cloudinary.config.cloud_name
 # Overlay
 
 # Text over image
-
 # puts Cloudinary::Utils.cloudinary_url("faces", 
 # transformation: { transformation: [
 #   {width: 300, height: 300, crop: "thumb"},
@@ -96,20 +95,16 @@ puts Cloudinary.config.cloud_name
 #   }
 # )
 
-# Image over video
+# Image over image
+# puts Cloudinary::Utils.cloudinary_url("faces", 
+#   transformation: { transformation: [
+#     {width: 300, height: 300, crop: "thumb"},
+#     {overlay: "logo", height:50,gravity:"south_east", x:10, y:10}
+#     ]
+#     }
+#   )
 
-# puts Cloudinary::Utils.cloudinary_url("video", 
-#   { resource_type:"video", 
-#     transformation: [
-#     {width: 400, crop: "scale", },
-#     {overlay: "cloudinary-logo", height:25,gravity:"south_east"}
-#   ]
-#   }
-# )
-
-# # Text over video
-
-
+# Text over video
 # puts Cloudinary::Utils.cloudinary_url("video", 
 #   { resource_type:"video", 
 #     transformation: [
@@ -119,4 +114,16 @@ puts Cloudinary.config.cloud_name
 #   ]
 #   }
 # )
+
+# Image over video
+# puts Cloudinary::Utils.cloudinary_url("video", 
+#   { resource_type:"video", 
+#     transformation: [
+#     {width: 400, crop: "scale", },
+#     {overlay: "logo", height:50,gravity:"north_west",x:10,y:10}
+#   ]
+#   }
+# )
+
+
 

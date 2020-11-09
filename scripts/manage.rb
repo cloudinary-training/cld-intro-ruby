@@ -23,7 +23,7 @@ puts Cloudinary.config.cloud_name
 ## Manage: Admin API and Upload API
 
 ### List all assets (up to 500, default 10)
-# jj Cloudinary::Api.resources()
+# jj Cloudinary::Api.resources
 
 ### List up to 500
 # jj Cloudinary::Api.resources(max_results: 500)
@@ -49,7 +49,7 @@ puts Cloudinary.config.cloud_name
 # load a couple of files to delete,invalidate is false by default, allows mulitple and removes derived like DAM
 # jj Cloudinary::Uploader.upload("./assets/dog.jpg", public_id: "dog")
 # jj Cloudinary::Uploader.upload("./assets/lake.jpg", public_id: "lake")
-# jj Cloudinary::Api.delete_resources(public_ids = ["dog","lake"], invalidate: true)
+jj Cloudinary::Api.delete_resources(["dog","lake"], invalidate: true)
 
 ### Tag on upload
 
