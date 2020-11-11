@@ -56,8 +56,7 @@ jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",use_filename:true,uniqu
 #### Use filename, not unique
 
 ```ruby
-use filename, not unique (no additional random characters)
-```
+jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg",use_filename:true, unique_filename:false)```
 
 #### Specify folder name
 
@@ -171,7 +170,7 @@ puts Cloudinary::Utils.cloudinary_url("remote-media/raw/data.json", resource_typ
 ### List all assets (default is 10)
 
 ```ruby
-jj Cloudinary::Api.resources()
+jj Cloudinary::Api.resources
 ```
 
 ### List up to 500 assets
