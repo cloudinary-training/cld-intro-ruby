@@ -19,7 +19,7 @@ puts Cloudinary.config.cloud_name
 # radius rounded corners and transparent background
 
 # puts Cloudinary::Utils.cloudinary_url("dog", transformation: {width: 300, height: 300, crop: "thumb", 
-#   gravity: "auto", format: "png" , quality: "auto",
+#   gravity: "auto", fetch_format: "png" , quality: "auto",
 #   radius: "max"})
 
 # borders
