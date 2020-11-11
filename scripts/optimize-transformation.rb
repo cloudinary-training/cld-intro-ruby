@@ -49,12 +49,6 @@ puts Cloudinary.config.cloud_name
 # puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "crop", gravity: "face"})
 # puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "thumb", gravity: "face"})
 
-# logo with thumb - watermark, branding
-# puts Cloudinary::Utils.cloudinary_url("logo", transformation: {width: 100, height: 100, crop: "thumb"})
-# Cloudinary's new logo using scaling
-# puts Cloudinary::Utils.cloudinary_url("logo", transformation: {width: 100, crop:"scale"})
-
-
 
 # use media debugger to inspect
 # puts Cloudinary::Utils.cloudinary_url("cookies")
