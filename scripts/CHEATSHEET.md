@@ -400,10 +400,9 @@ puts Cloudinary::Utils.cloudinary_url("blackberry", transformation: {
 Use the `effect` option. Set the width of the outline in pixels. 
 
 ```ruby
- puts Cloudinary::Utils.cloudinary_url("blackberry.png", 
-   transformation: { width: 300, height: 300, crop: "thumb",
-    gravity: "auto",  quality: "auto",
-    effect: "outline:15", color: "orange"})
+puts Cloudinary::Utils.cloudinary_url("grapes", 
+  transformation: { width: 300, crop: "scale",
+    quality: "auto", effect: "outline:15", color: "orange"})
 ```
 
 #### Improve color, contrast and light

@@ -17,6 +17,7 @@ end
 puts Cloudinary.config.cloud_name
 
 jj Cloudinary::Uploader.upload("./assets/blackberry.jpg", public_id: "blackberry")
+jj Cloudinary::Uploader.upload("./assets/grapes.png", public_id: "grapes")
 jj Cloudinary::Uploader.upload("./assets/cheesecake.jpg", public_id: "cheesecake")
 jj Cloudinary::Uploader.upload("./assets/dog.jpg", public_id: "dog")
 jj Cloudinary::Uploader.upload("./assets/face.jpg", public_id: "face")
