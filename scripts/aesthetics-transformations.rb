@@ -39,6 +39,20 @@ puts Cloudinary.config.cloud_name
 
 # Effects and Filters
 
+# color tint
+# puts Cloudinary::Utils.cloudinary_url("face",
+#   transformation: { width: 300, height: 300, crop: "thumb",
+#     gravity: "face", fetch_format: "auto" , quality: "auto",
+#     effect: "tint:40:magenta"})
+
+# duotone: chained transformation grayscale + tint
+# puts Cloudinary::Utils.cloudinary_url(
+#   "face",
+#   transformation: [
+#     { width: 300, height: 300, crop: "thumb",gravity: "face", effect: "grayscale" },
+#     { effect: "tint:40:magenta", fetch_format: "auto",quality: "auto" }
+#   ])
+
 # outline effect for transparent images
 
 # puts Cloudinary::Utils.cloudinary_url("blackberry.png", 
@@ -65,22 +79,6 @@ puts Cloudinary.config.cloud_name
 #   transformation: { width: 300, height: 300, crop: "thumb",
 #     gravity: "face", fetch_format: "auto" , quality: "auto",
 #     effect: "cartoonify"})
-
-# color tint
-
-# puts Cloudinary::Utils.cloudinary_url("face", 
-#   transformation: { width: 300, height: 300, crop: "thumb",
-#     gravity: "face", fetch_format: "auto" , quality: "auto",
-#     effect: "tint:40:magenta"})
-
-# duotone: chained transformation grayscale + tint
-# puts Cloudinary::Utils.cloudinary_url("face", 
-# transformation: [
-#   {transformation: [width: 300, height: 300, crop: "thumb",gravity: "face", effect: "grayscale"]}, 
-#   { transformation:[effect: "tint:40:magenta"]},
-#   { transformation:[fetch_format: "auto",quality: "auto"]}
-#   ]
-# )
 
 # Overlay
 
