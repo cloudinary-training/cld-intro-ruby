@@ -49,7 +49,7 @@ puts Cloudinary.config.cloud_name
 # load a couple of files to delete,invalidate is false by default, allows mulitple and removes derived like DAM
 # jj Cloudinary::Uploader.upload("./assets/dog.jpg", public_id: "dog")
 # jj Cloudinary::Uploader.upload("./assets/lake.jpg", public_id: "lake")
-jj Cloudinary::Api.delete_resources(["dog","lake"], invalidate: true)
+# jj Cloudinary::Api.delete_resources(["dog","lake"], invalidate: true)
 
 ### Tag on upload
 
@@ -57,7 +57,7 @@ jj Cloudinary::Api.delete_resources(["dog","lake"], invalidate: true)
 # jj Cloudinary::Api.resources_by_tag("berries",{tags: true})
 
 
-### Tag after upload and then search by tag
+### Tag after upload and then search by tag - add the tag "water" to the public id "lake"
 # jj Cloudinary::Uploader.upload("./assets/lake.jpg", public_id: "lake")
 # jj Cloudinary::Uploader.add_tag("water", "lake")
 # jj Cloudinary::Api.resources_by_tag("water",{tags: true})
