@@ -19,43 +19,43 @@ puts Cloudinary.config.cloud_name
 # Cropping and Gravity
 
 # default cropping mode is scale with 1 dimension
-# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, crop: "scale"})
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: { width: 300, crop: "scale" })
 # if you add a second dimension it may skew depending on original AR
-# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "scale"})
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: { width: 300, height:300, crop: "scale" })
 
 # 2 dimensions - no skew but not exact dimensions
 # use fit to guarantee that it doesn't skew and fits within the dimensions
 # not guarananteed to result in exact dimensions specified
-# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "fit"})
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: { width: 300, height:300, crop: "fit" })
 
 # 2 dimensions with no skew and guaranteed exact dimensions rendered with possible padding
-# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: {width: 300, height:300, crop: "pad", background: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("cheesecake", transformation: { width: 300, height: 300, crop: "pad", background: "auto" })
 
 # cropping takes a chunk out of an image
-# puts Cloudinary::Utils.cloudinary_url("dog", transformation: {width: 300, height: 300, crop: "crop"})
+# puts Cloudinary::Utils.cloudinary_url("dog", transformation: { width: 300, height: 300, crop: "crop" })
 
 #use gravity with thumb to get focus on someting interesting or a compass point
-# puts Cloudinary::Utils.cloudinary_url("dog", transformation: {width: 300, height: 300, crop: "thumb", gravity: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("dog", transformation: { width: 300, height: 300, crop: "thumb", gravity: "auto" })
 
 # crop with gravity: auto,  fill vs thumb
 # not all crop types can use gravity, only: crop, fill, lfill, fill_pad (auto g only) or thumb
-# puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "fill", gravity: "auto"})
-# puts Cloudinary::Utils.cloudinary_url("face", transformation: {width: 300, height: 300, crop: "thumb", gravity: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("face", transformation: { width: 300, height: 300, crop: "fill", gravity: "auto" })
+# puts Cloudinary::Utils.cloudinary_url("face", transformation: { width: 300, height: 300, crop: "thumb", gravity: "auto" })
 
 # gravity face
-# puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "crop", gravity: "face"})
-# puts Cloudinary::Utils.cloudinary_url("working", transformation: {width: 300, height: 400, crop: "thumb", gravity: "face"})
+# puts Cloudinary::Utils.cloudinary_url("working", transformation: { width: 300, height: 400, crop: "crop", gravity: "face" })
+# puts Cloudinary::Utils.cloudinary_url("working", transformation: { width: 300, height: 400, crop: "thumb", gravity: "face" })
 
 
 # use media debugger to inspect after format and quality changes
 
 #Format
 # add auto format
-# puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto",fetch_format: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("lake", transformation: { height: 400, crop: "fill", gravity: "auto", fetch_format: "auto" })
 
 # Compression: quality
 # puts Cloudinary::Utils.cloudinary_url("cookies")
-# puts Cloudinary::Utils.cloudinary_url("cookies", transformation: { quality: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("cookies", transformation: { quality: "auto" })
 
 # auto everything - format and quality
-# puts Cloudinary::Utils.cloudinary_url("lake", transformation: {height: 400, crop: "fill", gravity: "auto", quality: "auto",fetch_format: "auto"})
+# puts Cloudinary::Utils.cloudinary_url("lake", transformation: { height: 400, crop: "fill", gravity: "auto", quality: "auto", fetch_format: "auto" })
