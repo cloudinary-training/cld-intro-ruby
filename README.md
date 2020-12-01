@@ -1,7 +1,5 @@
 # Cloudinary Intro using Ruby #
 
-<h2 style="color:red">WIP: This is source code for a course under development.</h2>
-
 ## Ruby install
 
 Use a version of **Ruby >= 2.4**.  In this repo we are using version 2.5.7 as indicated in the `./scripts/.ruby-version` file.  If you are using a different version of ruby, you can change the value in that file.
