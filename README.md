@@ -66,17 +66,12 @@ Commands are commented out in each script.  You can uncomment and run script or 
 
 ## Using ruby/irb (optional)
 
-We are using irb binding. You need version 2.4 or higher of ruby to use this.  We are using cloudinary.yml for irb binding.  The yml is used for rails.  We call out the Development credentials in this binding.
-
-1. Download your `cloudinary.yml` using this link: https://cloudinary.com/console/cloudinary.yml
-2. Copy the yml file into `scripts/config`
-3. From the `scripts` directory run 
+You need version 2.4 or higher of Ruby to use ruby/irb.  This will allow you to experiment with your own commands interactively. Once you have set up the `config.rb`, the `scripts/bin/console.rb` will be able to access your credentials.  From the `scripts` directory run the following.
 
 ```bash
 ruby bin/console.rb
 ```
-4. From the irb you can execute single command
-5. Enter `exit` to leave the irb.
+
 
 ---
 
