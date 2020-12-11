@@ -50,19 +50,19 @@ puts Cloudinary.config.cloud_name
 # ])
 
 # name it "complex" don't include f_auto
-# jj Cloudinary::Api.create_transformation("complex", transformation: [
-#   { overlay: "logo", effect: "brightness:-21", x: -10, y: -200, width:304, radius: "max" },
-#   {
-#     overlay: { font_family: "Coustard", font_size: 100, color: "rgb:999999", font_weight: "bold", text: "Hello Jon"},
-#     opacity: 70,
-#     y: 0,
-#     x: -10,
-#     width: 365
-#   }
-# ])
+jj Cloudinary::Api.create_transformation("complex", transformation: [
+  { overlay: "logo", effect: "brightness:-21", x: -10, y: -200, width:304, radius: "max" },
+  {
+    overlay: { font_family: "Coustard", font_size: 100, color: "rgb:999999", font_weight: "bold", text: "Hello Jon"},
+    opacity: 70,
+    y: 0,
+    x: -10,
+    width: 365
+  }
+])
 
 # use it and add f_auto
-# puts Cloudinary::Utils.cloudinary_url("demo/shirt_only.png", transformation: [
-#   "complex",
-#   fetch_format: "auto"
-# ])
+puts Cloudinary::Utils.cloudinary_url("shirt_only.png", transformation: [
+  "complex",
+  fetch_format: "auto"
+])
