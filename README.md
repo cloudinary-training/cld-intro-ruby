@@ -6,7 +6,7 @@ Use a version of **Ruby >= 2.4**.  In this repo, we are using version 2.5.7 as i
 
 ### Mac
 Mac comes with Ruby installed.
-To install the latest version of Ruby, use HomeBrew.  You can [install Homebrew](https://brew.sh/) 
+To install the latest version of Ruby, use [Homebrew](https://brew.sh/):
 
 ```bash
 brew install ruby
@@ -22,14 +22,14 @@ The scripts are run from the `scripts` directory.
 
 1. Clone this repo.
 
-2. Install Cloudinary gem. 
+2. Install the Cloudinary gem: 
 
 ```bash 
 `gem install cloudinary`
 ```
 3. Set up credentials.
 
-Create a `./scripts/config.rb` file and copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.  The code below shows two alternatives for adding credentials.
+Create a `./scripts/config.rb` file and copy the ClOUDINARY_URL value from your Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the [config.rb.sample](/scripts/config.rb.sample).  The code below shows two alternatives for adding credentials.
 
 There are two ways you can make the credentials available.
 
@@ -43,7 +43,7 @@ Cloudinary.config_from_url("cloudinary://API_KEY:API_SECRET@CLOUD_NAME")
 ```
 
 ## Exercises
-You will see that the images and video to be used in the exercises are in the `assets` directory.  Scripts access assets relative to the scripts directory, so navigate to the `scripts` directory.  
+The images and videos to be used in the exercises are located in the [assets](/scripts/assets/) directory.  The scripts access assets relative to the `scripts` directory, so navigate to the `scripts` directory.  
 
 ```bash
 cd scripts
