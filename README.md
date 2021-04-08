@@ -64,7 +64,7 @@ Commands are commented out in each script.  You can uncomment and run script or 
 
 ## Using Ruby/IRB (optional)
 
-You need version 2.4 or higher of Ruby to use Ruby/IRB.  This will allow you to experiment with your own commands interactively. Once you have set up the `config.rb`, the `scripts/bin/console.rb` will be able to access your credentials.  From the `scripts` directory, run the following:
+You need version 2.4 or later of Ruby to use Ruby/IRB.  This will allow you to experiment with your own commands interactively. Once you have set up the `config.rb`, the `scripts/bin/console.rb` will be able to access your credentials.  From the `scripts` directory, run the following:
 
 ```bash
 ruby bin/console.rb
