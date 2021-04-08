@@ -22,6 +22,9 @@ The scripts are run from the `scripts` directory.
 
 1. Clone this repo.
 
+```bash
+$ git clone https://github.com/cloudinary-training/cld-intro-ruby.git
+```
 2. Install Cloudinary gem. 
 
 ```bash 
