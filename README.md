@@ -25,7 +25,7 @@ The scripts are run from the `scripts` directory.
 2. Install Cloudinary gem. 
 
 ```bash 
-`gem install cloudinary`
+gem install cloudinary
 ```
 3. Set up credentials.
 
