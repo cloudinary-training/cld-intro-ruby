@@ -29,7 +29,7 @@ gem install cloudinary
 ```
 3. Set up credentials.
 
-Create a `./scripts/config.rb` file and copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.  The code below shows two alternatives for adding credentials.
+Create a `./scripts/config.rb` file and copy the value from the CLOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.  The code below shows two alternatives for adding credentials.
 
 There are two ways you can make the credentials available.
 
