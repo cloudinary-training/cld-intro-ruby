@@ -4,6 +4,8 @@
 
 Use a version of **Ruby >= 2.4**.  In this repo, we are using version 2.5.7 as indicated in the `./scripts/.ruby-version` file.  If you are using a different version of Ruby, you can change the value in that file.
 
+If you are unsure of whether you have Ruby installed or what version it may be, you can type `ruby -v` on the command line or `rvm current` if you are using RVM.
+
 ### Mac
 Mac comes with Ruby installed.
 To install the latest version of Ruby, use HomeBrew.  You can [install Homebrew](https://brew.sh/) 
