@@ -42,6 +42,24 @@ There are two ways you can make the credentials available.
 Cloudinary.config_from_url("cloudinary://API_KEY:API_SECRET@CLOUD_NAME")
 ```
 
+### Note: Working with Environment Variables
+You'll see this code in the training scripts for importing the config file.  If an environment variable has been set up, it will override this code.
+
+```ruby
+if Cloudinary.config.api_key.blank?
+  require './config'
+end
+```
+
+If you are using environment variables and want the external `config.rb` file to override the environment variable, the code below can help with that.  The use case for this might be if you are working locally with this code.
+
+```ruby
+USE_CONFIG_FILE = true
+if Cloudinary.config.api_key.blank? || USE_CONFIG_FILE
+  require './config'
+end
+```
+
 ## Exercises
 You will see that the images and video to be used in the exercises are in the `assets` directory.  Scripts access assets relative to the scripts directory, so navigate to the `scripts` directory.  
 
