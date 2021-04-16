@@ -4,6 +4,8 @@
 
 Use a version of **Ruby >= 2.4**.  In this repo, we are using version 2.5.7 as indicated in the `./scripts/.ruby-version` file.  If you are using a different version of Ruby, you can change the value in that file.
 
+If you are unsure of whether you have Ruby installed or what version it may be, you can type `ruby -v` on the command line or `rvm current` if you are using RVM.
+
 ### Mac
 Mac comes with Ruby installed.
 To install the latest version of Ruby, use HomeBrew.  You can [install Homebrew](https://brew.sh/) 
@@ -25,11 +27,11 @@ The scripts are run from the `scripts` directory.
 2. Install Cloudinary gem. 
 
 ```bash 
-`gem install cloudinary`
+gem install cloudinary
 ```
 3. Set up credentials.
 
-Create a `./scripts/config.rb` file and copy the value from the ClOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.  The code below shows two alternatives for adding credentials.
+Create a `./scripts/config.rb` file and copy the value from the CLOUDINARY_URL located in the Cloudinary [Management Console](https://cloudinary.com/console) into the file as an argument for the `config_from_url` command.  See the `config.rb.sample`.  The code below shows two alternatives for adding credentials.
 
 There are two ways you can make the credentials available.
 
